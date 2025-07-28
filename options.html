@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>链接收藏器 - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>链接收藏器 设置</h1>
+    </header>
+
+    <main>
+      <section class="settings-section">
+        <h2>数据管理</h2>
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="autoBackup" checked>
+            自动备份数据
+          </label>
+          <p class="description">定期将数据备份到本地存储</p>
+        </div>
+        
+        <div class="setting-item">
+          <button id="exportData" class="btn">导出数据</button>
+          <button id="importData" class="btn">导入数据</button>
+          <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+        
+        <div class="setting-item">
+          <button id="clearAllData" class="btn danger">清除所有数据</button>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>快捷键设置</h2>
+        <div class="setting-item">
+          <p><strong>当前快捷键：</strong></p>
+          <ul>
+            <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>：添加当前页面</li>
+            <li>双击 <kbd>Shift</kbd>：显示快速添加面板</li>
+          </ul>
+          <p class="description">可在 chrome://extensions/shortcuts 中修改</p>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>统计信息</h2>
+        <div id="stats">
+          <p>总链接数：<span id="totalLinks">0</span></p>
+          <p>总标签数：<span id="totalTags">0</span></p>
+          <p>最近添加：<span id="lastAdded">-</span></p>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>标签管理</h2>
+        <div id="tagManagement">
+          <div id="tagsList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
